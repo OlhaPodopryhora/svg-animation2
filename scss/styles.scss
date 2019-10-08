@@ -1,0 +1,54 @@
+@import 'normalize';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #fff;
+}
+
+
+.logo {
+	@include myPos();
+	&__beetroot,
+	&__text {
+		stroke-width: .5px;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		animation-name: drawPath;
+		animation-timing-function: ease-in;
+		animation-fill-mode: forwards;
+		fill-opacity: .4;
+	}
+	&__beetroot {
+		fill: #77c167;
+		stroke: #77c167;
+		animation-duration: 10s;
+	}
+	&__text {
+		fill: #3d3935;
+		stroke: #3d3935;
+		animation-duration: 20s;
+	}
+}
+
+@keyframes drawPath {
+	0% {
+	}
+	90% {
+		stroke-dashoffset: 0px;
+		fill-opacity: 0;
+	}
+	100% {
+		stroke-dashoffset: 0px;
+		fill-opacity: 1;
+	}
+}
